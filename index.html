@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/23c082efd8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="heading">ToDo App</h1>
+      <div
+        id="dark-mode-toggle-btn"
+        class="toggle-btn"
+        aria-label="Dark Mode Toggle"
+      >
+        <div id="toggle-icon" class="fas fa-toggle-off"></div>
+      </div>
+    </header>
+
+    <button id="btnOpenModal">Add New Task</button>
+    <main class="main-content">
+      <nav class="container" role="navigation" aria-label="Task Navigation">
+        <header class="header">Tasks</header>
+        <article class="sort-btn header">
+          <div>
+            <div>Sort By</div>
+            <i class="fa fa-sort"></i>
+          </div>
+          <button class="sort-name sort-btn">name</button>
+          <button class="sort-crd sort-btn">creation date</button>
+          <button class="sort-deadline sort-btn">deadline</button>
+          <button class="sort-priority sort-btn">priority</button>
+        </article>
+        <section class="incomplete-tasks" aria-labelledby="incompleteHeader">
+          <header class="header" id="incompleteHeader">Incomplete</header>
+          <!-- Incomplete tasks content here -->
+        </section>
+        <section class="completed-tasks" aria-labelledby="completedHeader">
+          <header class="header" id="completedHeader">Completed</header>
+          <!-- Completed tasks content here -->
+        </section>
+      </nav>
+    </main>
+
+    <!-- Modal -->
+    <div
+      id="myModal"
+      class="modal"
+      role="dialog"
+      aria-labelledby="modalTitle"
+      aria-describedby="modalDescription"
+    >
+      <div class="modal-content">
+        <button class="close" aria-label="Close">&times;</button>
+        <h2 id="modalTitle">Add New Task</h2>
+        <form class="input-container" id="modal-input-container">
+          <label for="taskName">Task name:</label>
+          <input
+            type="text"
+            id="taskName"
+            class="input-field"
+            placeholder="Task name"
+            required
+          />
+          <label for="taskDescription">Description:</label>
+          <input
+            type="text"
+            id="taskDescription"
+            class="description-field input-field"
+            placeholder="Description"
+            required
+          />
+          <label for="taskDeadline">Deadline:</label>
+          <input
+            type="date"
+            id="taskDeadline"
+            class="deadline-field input-field"
+            required
+          />
+          <label for="taskPriority">Priority:</label>
+          <select id="taskPriority" class="priority-field input-field">
+            <option value="high" selected>High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+          <button type="submit" id="modal-btn">Add Task</button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <!-- Footer content here -->
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

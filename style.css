@@ -1,0 +1,340 @@
+/* Import Montserrat font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+
+/* Default theme variables */
+:root {
+  --bg-color: #fff;
+  --text-color: #333;
+  --border-color: #999;
+  --button-bg-color: blueviolet;
+  --button-text-color: #fff;
+  --button-hover-color: #4caf50; /* Darker shade of blueviolet */
+  --box-shadow: 0.1px 0.1px 2px rgba(0, 0, 0, 0.4);
+  --icon-color: #444;
+}
+
+/* Dark theme variables */
+.dark {
+  --bg-color: #333;
+  --text-color: #fff;
+  --border-color: #666;
+  --button-bg-color: #4caf50; /* Darker shade of blueviolet */
+  --button-text-color: #fff;
+  --button-hover-color: #4caf50; /* Even darker shade of blueviolet */
+  --box-shadow: 0.1px 0.1px 2px rgba(255, 255, 255, 0.4);
+  --icon-color: #ccc;
+}
+
+/* Global styles */
+body {
+  font-family: "Montserrat", sans-serif;
+  padding: 0 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.header {
+  text-align: center;
+  background: var(--bg-color);
+  /* padding: 10px; */
+}
+
+.header:first-of-type {
+  grid-column: 1 / span 2;
+}
+
+.heading {
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0 0 15px 0;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.input-container {
+  display: none;
+  text-align: center;
+  padding: 20px 0 0 0;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0.1px 0.1px 2px rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px;
+}
+button {
+  box-sizing: border-box;
+  padding: 12px;
+  font-size: 1.1rem;
+  margin: 0 0 15px 0;
+  border-radius: 5px;
+  border: none;
+  background: #eee;
+  outline: none;
+  box-shadow: 0.1px 0.1px 2px rgba(0, 0, 0, 0.3);
+  font-family: inherit;
+  letter-spacing: 0.8px;
+}
+.input-field {
+  box-sizing: border-box;
+  padding: 12px;
+  font-size: 1.1rem;
+  margin: 0 0 15px 0;
+  border-radius: 5px;
+  border: none;
+  background: #eee;
+  outline: none;
+  width: 60%;
+  box-shadow: 0.1px 0.1px 2px rgba(0, 0, 0, 0.3);
+  font-family: inherit;
+  letter-spacing: 0.8px;
+}
+
+.input-field:focus:invalid {
+  border-bottom: 2px solid red;
+}
+
+.input-field:valid {
+  border-bottom: 2px solid green;
+}
+header button {
+  font-size: 1rem;
+  color: var(--button-text-color);
+  width: 30%;
+  cursor: pointer;
+  box-shadow: 0.1px 0.1px 2px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+}
+/* form button{
+  font-size: 1rem;
+  background: var(--button-bg-color);
+  color: var(--button-text-color);
+  width: 30%;
+  cursor: pointer;
+  box-shadow: 0.1px 0.1px 2px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+} */
+
+button:hover {
+  background: var(--button-hover-color);
+}
+
+.container {
+  box-shadow: 0.1px 0.1px 2px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 15px 15px;
+  grid-auto-flow: dense;
+}
+
+.sort-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.sort-btn button {
+  padding: 10px;
+  border-radius: 5px;
+  background: #eee;
+  cursor: pointer;
+  box-shadow: 0.1px 0.1px 2px rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+  font-size: 1rem;
+  align-content: center;
+}
+.sort-btn i{
+  color:var(--icon-color); 
+}
+/* Add this CSS to your style.css file */
+
+.sort-btn button.active {
+  font-weight: bold;
+  background-color: green;
+  color: var(--button-text-color);
+}
+
+
+i {
+  cursor: pointer;
+  color: var(--icon-color);
+}
+
+i.fa-trash {
+  margin-left: 7px;
+}
+
+i.fa-check:hover {
+  color: green;
+}
+
+i.fa-trash:hover,
+i.fa-times:hover {
+  color: red;
+}
+
+.todo {
+  grid-column: 1 / span 1;
+  padding: 15px 10px;
+  border-radius: 5px;
+  border-bottom: 3px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0.1px 0.1px 2px rgba(0, 0, 0, 0.4);
+  animation: todo 0.3s ease;
+}
+
+.todo:hover {
+  background-color: rgba(255, 0, 0, 0.2);
+  color: red;
+}
+
+.todo:hover.completed {
+  background-color: rgba(0, 220, 0, 0.05);
+  color: green;
+}
+
+.todo.completed {
+  grid-column: 2 / span 1;
+  border-color: green;
+}
+
+.todo-id {
+  display: none;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 10px;
+  padding: 0 0 0 7px;
+}
+
+@media (max-width: 380px) {
+  .container {
+    padding: 10px 10px;
+  }
+
+  .input-field,
+  button {
+    width: 90%;
+  }
+}
+
+@media (max-width: 370px) {
+  body {
+    padding: 0 5px;
+  }
+
+  .todo {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .todo-actions {
+    margin-top: 10px;
+  }
+}
+
+@keyframes todo {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.toggle-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.toggle-btn:hover {
+  color: #333; /* Change color on hover if desired */
+}
+
+.toggle-btn:focus {
+  outline: none;
+}
+
+.fa-toggle-off {
+  color: #ccc; /* Color when toggle is off */
+}
+
+.fa-toggle-on {
+  color: #2ecc71; /* Color when toggle is on */
+}
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: var(--text-color);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--text-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+#btnOpenModal {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#btnOpenModal:hover {
+  background-color: #45a049;
+}
+.input-container {
+  display: flex;
+  text-align: center;
+  padding: 20px 0 0 0;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0.1px 0.1px 2px rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px;
+}
+
+article{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color:var(--bg-color);
+  z-index: 2;
+  padding: 20px;
+  /* margin: 0 0 20px 0; */
+  /* font-size: 20px; */
+  border: 2px solid #4CAF50;
+}

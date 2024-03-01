@@ -10,6 +10,10 @@ Welcome to the ToDo App! This application provides a comprehensive solution for 
 - **Mark Tasks as Complete**: Toggle the completion status of tasks with a single click.
 - **Delete Tasks**: Remove tasks from your list effortlessly.
 
+
+https://github.com/hardikpedia/todo/assets/74953455/e0982f0e-647d-4140-8a45-ffe490185f0c
+
+
 ### Sorting and Filtering
 - **Sort Tasks**: Arrange tasks based on various criteria such as name, creation date, deadline, and priority.
 - **Filter by Priority**: Quickly identify high-priority tasks and focus on what matters most.
